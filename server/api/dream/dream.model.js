@@ -7,7 +7,8 @@ var DreamSchema = new Schema({
   future: String,
   world: String,
   active: Boolean,
-  votes: Number
+  votes: Number,
+  flagged: Boolean
 });
 
 DreamSchema.statics.random = function(cb) {

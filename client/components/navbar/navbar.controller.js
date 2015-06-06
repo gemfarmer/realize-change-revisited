@@ -6,19 +6,24 @@ angular.module('realizeChangeApp')
     console.log(User)
     $scope.menu = [{
       'title': 'Begin Dreaming',
-      'link': '/dreaming'
+      'link': '/dreaming',
+      'iconName':'cloud'
     },{
       'title': 'Dreams',
-      'link': '/dreams'
+      'link': '/dreams',
+      'iconName':'globe'
     },{
       'title': 'Vote4Change',
-      'link': '/vote'
+      'link': '/vote',
+      'iconName':'thumbs-o-up'
     },{
       'title': 'Results',
-      'link': '/results'
+      'link': '/results',
+      'iconName':'flag-checkered'
     },{
       'title': 'About Us',
-      'link': '/about'
+      'link': '/about',
+      'iconName':'info-circle'
     }];
 
     $scope.isCollapsed = true;
