@@ -2,8 +2,7 @@
 
 angular.module('realizeChangeApp')
   .controller('DreamsCtrl', function ($scope, $http, socket) {
-    $scope.message = 'Hello';
-    
+  	$scope.searchParam = 'world';
     $http.get('/api/dreams').success(function(dreams) {
       $scope.dreams = dreams;
       socket.syncUpdates('dream', $scope.dreams);
@@ -16,6 +15,8 @@ angular.module('realizeChangeApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('dreams');
     });
-
+    $scope.selectParam = function(param){
+    	$scope.searchParam = param;
+    }
   });
 

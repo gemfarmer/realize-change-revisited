@@ -1,10 +1,24 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('AdminCtrl', function ($scope, $http, Auth, User) {
+  .controller('AdminCtrl', function ($scope, $http, Auth, User, socket) {
 
     // Use the User $resource to fetch all users
     $scope.users = User.query();
+
+    $http.get('/api/dreams').success(function(dreams) {
+      $scope.dreams = dreams;
+      socket.syncUpdates('dream', $scope.dreams);
+    });
+
+    $scope.deleteDream = function(dream) {
+      $http.delete('/api/dreams/' + dream._id);
+    };
+
+    $scope.$on('$destroy', function () {
+      socket.unsyncUpdates('dreams');
+    });
+
 
     $scope.delete = function(user) {
       User.remove({ id: user._id });
