@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('VoteCtrl', function ($scope, $http, socket) {
+  .controller('VoteCtrl', function ($scope, $http, socket, $timeout, $state) {
     $scope.voted = false;
 
     $http.get('/api/dreams/random').success(function(dream) {
@@ -22,6 +22,9 @@ angular.module('realizeChangeApp')
     	$http.put('/api/dreams/' + dream._id, dream);
 
     	$scope.voted = true;
+    	$timeout(function(){
+    		$state.go('results');
+    	},500);
     }
    
   });

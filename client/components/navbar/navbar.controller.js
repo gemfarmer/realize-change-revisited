@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, User) {
+    $scope.currentUser = Auth.getCurrentUser();
+    console.log(User)
     $scope.menu = [{
       'title': 'Begin Dreaming',
       'link': '/dreaming'

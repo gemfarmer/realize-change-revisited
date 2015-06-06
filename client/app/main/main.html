@@ -8,17 +8,15 @@
   </div>
 </header>
 
+<a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Connect with Google+
+          </a>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Features:</h1>
        <a href="http://realizechange.herokuapp.com/"> http://realizechange.herokuapp.com/</a>
-    About Us
-    Begin Dreaming
-    Vote4Change
-    Dreams
-    Results
-    About Us
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
         <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
       </ul>

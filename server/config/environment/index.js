@@ -12,6 +12,8 @@ function requiredProcessEnv(name) {
 
 // All configurations will extend these options
 // ============================================
+
+console.log(process.env)
 var all = {
   env: process.env.NODE_ENV,
 
@@ -42,8 +44,8 @@ var all = {
   },
 
   facebook: {
-    clientID:     process.env.FACEBOOK_ID || 'id',
-    clientSecret: process.env.FACEBOOK_SECRET || 'secret',
+    clientID:     process.env.FACEBOOK_ID || '1091820304167074',
+    clientSecret: process.env.FACEBOOK_SECRET || '32f0ae25df47bac88c1d37315cb370ac',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
   },
 
@@ -54,8 +56,8 @@ var all = {
   },
 
   google: {
-    clientID:     process.env.GOOGLE_ID || 'id',
-    clientSecret: process.env.GOOGLE_SECRET || 'secret',
+    clientID:     process.env.GOOGLE_ID || '896121692354-s1ril20ljt2r34s4bifht3rv68ear05p.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'DPcFihaCiynWy5kTiZ2EX0T6',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/google/callback'
   }
 };

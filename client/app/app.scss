@@ -17,7 +17,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 .clickable {
 	cursor: pointer;
 }
-
+#profile-picture{
+	border-radius: 50%;
+}
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
