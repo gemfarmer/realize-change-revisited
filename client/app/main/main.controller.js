@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('MainCtrl', function ($scope, $http, socket, $window) {
+  .controller('MainCtrl', function ($scope, $http, socket, $window, Auth) {
     $scope.awesomeThings = [];
+    $scope.currentUser = Auth.getCurrentUser();
+    $scope.isLoggedIn = Auth.isLoggedIn();
+    console.log(Auth)
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;

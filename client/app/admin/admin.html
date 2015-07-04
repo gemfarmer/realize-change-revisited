@@ -3,14 +3,15 @@
 <div class="container">
   
   
-   <tabset justified="true">
+   <tabset justified="false">
     <tab heading="Flagged" class="clickable">
     	<br>
     	What are your dreams for the future?
     	<ul class="" ng-repeat="dream in dreams">
 		<li ng-if="dream.flagged"><a class="btn btn-default" href="#" tooltip="{{dream.info}}" >
 			{{dream.future}} 
-			<button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a>
+			<a><button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a>
+			<a><button type="button" class="fa fa-flag-checkered" ng-click="unflag(dream)">Unflag</button></a>
 		</li>
 		</ul>
 		How can we make a better world?
@@ -18,6 +19,7 @@
 		<li ng-if="dream.flagged"><a class="btn btn-default" href="#" tooltip="{{dream.info}}" >
 			{{dream.world}} 
 			<button type="button" class="close" ng-click="deleteDream(dream)">&times;</button></a>
+			<a><button type="button" class="fa fa-flag-checkered" ng-click="unflag(dream)">Unflag</button></a>
 		</li>
 		</ul>
     </tab>

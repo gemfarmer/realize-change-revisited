@@ -15,6 +15,11 @@ angular.module('realizeChangeApp')
       $http.delete('/api/dreams/' + dream._id);
     };
 
+    $scope.unflag = function(dream){
+      dream.flagged = false;
+      $http.put('/api/dreams/' + dream._id, dream);
+    }
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('dreams');
     });

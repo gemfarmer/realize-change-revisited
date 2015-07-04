@@ -20,6 +20,20 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 #profile-picture{
 	border-radius: 50%;
 }
+
+.not-landing {
+	.navbar-default{
+	      background-color: transparent;
+	      
+	      .navbar-nav .active a{
+	      	background-color: white;
+	      }
+	  }
+
+}
+
+
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

@@ -1,15 +1,16 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('DreamsCtrl', function ($scope, $http, socket) {
+  .controller('DreamsCtrl', function ($scope, $http, socket, Dreams) {
   	$scope.searchParam = 'world';
     $http.get('/api/dreams').success(function(dreams) {
       $scope.dreams = dreams;
       socket.syncUpdates('dream', $scope.dreams);
     });
 
+
     $scope.deleteDream = function(dream) {
-      $http.delete('/api/dreams/' + dream._id);
+      Dreams.delete(dream);
     };
 
     $scope.$on('$destroy', function () {

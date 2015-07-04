@@ -1,5 +1,24 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
 
+<!-- <img src="assets/images/starry_night.jpg" alt="starry night"> -->
+<div ng-if="!isLoggedIn" back-image="assets/images/stars2.jpg" back-size="full">
+  <div class="container landing-wrapper">
+  <h1>Think Dream Tank</h1>
+  <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Connect with Google+
+          </a>
+  </div>
+</div>
+
+<div ng-if="isLoggedIn" back-image="assets/images/stars2.jpg" back-size="full">
+  <div ng-include="'components/navbar/navbar.html'" ></div>
+
+  <!-- <footer class="footer">
+  <div class="container">
+      <p>Brian Hedberg |
+         <a href="https://github.com/gemfarmer">gemfarmer</a></p>
+  </div>
+</footer> -->
+</div>
 <!-- <header class="hero-unit" id="banner">
   <div class="container">
     <h1>'Allo, 'Allo!</h1>
@@ -8,9 +27,7 @@
   </div>
 </header> -->
 
-<a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
-            <i class="fa fa-google-plus"></i> Connect with Google+
-          </a>
+
 
 <!-- <div class="container">
   <div class="row">
@@ -36,9 +53,4 @@
   </form>
 </div> -->
 
-<footer class="footer">
-  <div class="container">
-      <p>Brian Hedberg |
-         <a href="https://github.com/gemfarmer">gemfarmer</a></p>
-  </div>
-</footer>
+
