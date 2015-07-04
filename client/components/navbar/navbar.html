@@ -24,10 +24,10 @@
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
         <li ng-show="isLoggedIn()">
-          <img id="profile-picture" src="{{currentUser.google.image.url}}"/>
+          <img id="profile-picture" src="{{userInfo.profile_img}}"/>
 
           <p class="navbar-text">
-            Hello, {{ currentUser.name }}
+            Hello, {{ userInfo.first_name }}
           </p> 
         </li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>

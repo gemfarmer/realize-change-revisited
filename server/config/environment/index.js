@@ -48,6 +48,11 @@ var all = {
     clientSecret: process.env.FACEBOOK_SECRET || '32f0ae25df47bac88c1d37315cb370ac',
     callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
   },
+  facebook_dev: {
+    clientID:     process.env.FACEBOOK_ID || '1110526725629765',
+    clientSecret: process.env.FACEBOOK_SECRET || 'da55bc76ae3d0b43a7c76555af9f682c',
+    callbackURL:  (process.env.DOMAIN || '') + '/auth/facebook/callback'
+  },
 
   twitter: {
     clientID:     process.env.TWITTER_ID || 'id',
