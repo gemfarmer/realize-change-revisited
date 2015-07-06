@@ -51,9 +51,27 @@
 * Stage the changes -> `git add -A`
 * Commit the changes and add a message -> git commit -m "YOUR_MESSAGE"
 * git push origin NAME_OF_YOUR_NEW_BRANCH
+#### Push to your remote branch
 * Periodically, you should pull in new changes on the remote server to your local machine. To do that, do as follows:
 * After committing all changes, switch to the master branch -> `git checkout master`
 * Pull your changes -> `git pull origin master`
-* 
+* The easiest way (probably not the best, but will work) is to creat a separate, temporary branch to merge the master and your feature branch. -> `git checkout -b temporary-branch`
+* Then, merge your feature changes onto that branch -> `git merge NAME_OF_YOUR_NEW_BRANCH`
+* If there are conflicts, refer to the files where there is overlap and try to resolve them. Make sure to get rid of extra angle brackets <<<<<<<< or >>>>>>>>>. If you don't know what is going on here, give me a ring.
+* There probably won't be if you do this regularly, so if not, continue by navigating to your feature branch -> `git checkout NAME_OF_YOUR_NEW_BRANCH`
+* add your changes to this branch -> `git merge temporary-branch`
+* now stage, commit, and push these changes to the server:
+* Stage -> `git add -A`
+* Commit -> git commit -m "YOUR_MESSAGE"
+* Push -> git push origin NAME_OF_YOUR_NEW_BRANCH
+* Then, delete the temporary branch -> `git branch -D temporary-branch`
+
+#### Making additions to master
+* When you are ready to add your additions to master, follow all the steps in the 'Push to your remote branch' section, then submit a pull request on github.
+* Go to [the repo](https://github.com/gemfarmer/realize-change-revisited), then click on the Pull Requests tab on the right side, and submit a pull request comparing the master branch to your branch
+* I'll take a look at it, and merge it.
+* Once this is done, you can pull the new changes down by:
+* `git checkout master`
+* `git pull origin master`
 
 
