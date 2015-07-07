@@ -12,7 +12,7 @@
 * install bower -> `npm install -g bower`
 * Set up your github -> great setup instructions [here](https://help.github.com/articles/set-up-git/)
 * Now, clone the directory from github
-* `mkdir Projects`
+* `cd ~ && mkdir Projects`
 * `cd Projects`
 * clone -> `git clone https://github.com/gemfarmer/realize-change-revisited.git`
 * `cd realize-change-revisited`
