@@ -42,6 +42,7 @@
 * [This](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) is a great resource on Git Flow.
 * If this is overwhelming, no worries, i'll try to run through the basics that you will need to contribute.
 * First, make sure you have a cloned version of the project in a directory on your machine. This is in the instructions above.
+* Get into the correct directory -> `cd ~/Projects/realize-change-revisited`
 * Check to make sure that the remote repository exists -> `git remote -v` 
 * This should give a fetch and push github url. If it doesn't (it should) add one -> git remote add origin https://github.com/gemfarmer/realize-change-revisited.git
 * Check again -> `git remote -v`
@@ -62,8 +63,8 @@
 * add your changes to this branch -> `git merge temporary-branch`
 * now stage, commit, and push these changes to the server:
 * Stage -> `git add -A`
-* Commit -> git commit -m "YOUR_MESSAGE"
-* Push -> git push origin NAME_OF_YOUR_NEW_BRANCH
+* Commit -> `git commit -m "YOUR_MESSAGE"`
+* Push -> `git push origin NAME_OF_YOUR_NEW_BRANCH`
 * Then, delete the temporary branch -> `git branch -D temporary-branch`
 
 #### Making additions to master
