@@ -76,4 +76,25 @@
 * `git checkout master`
 * `git pull origin master`
 
+# Database
+
+## Local
+* To interface with the database locally:
+* Open a new terminal window, then -> `sudo mongod`
+* In another terminal window -> `mongo`
+* Then, in the same window -> `show dbs`
+* Then `use realize-change-revisited-dev`
+* You are now in the DB and can use command line mongo commands to find different collections of data.
+* [A good resource for these commands](http://docs.mongodb.org/manual/tutorial/getting-started-with-the-mongo-shell/)
+* The most common command that you will use will be to search a collection.
+* To see the collections `show collections`
+* Then once you see the collections: users, sessions, dreams, you can find the ones you want: `db.dreams.find()`
+* or to make it prettier `db.dreams.find().pretty()`
+* or maybe you want to just find one: `db.dreams.findOne({ "_id" : ObjectId("556e081c3abf1dde475e3c19")})`
+* or `db.dreams.findOne({ "name" : "Brian"})`
+
+## Live Site
+Alternatively you can mess around with this on MongoLab
+* Go [here](https://www.mongolab.com/databases/heroku_mpvzvwk0) and play around!
+
 
