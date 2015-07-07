@@ -52,6 +52,7 @@
 * Stage the changes -> `git add -A`
 * Commit the changes and add a message -> git commit -m "YOUR_MESSAGE"
 * git push origin NAME_OF_YOUR_NEW_BRANCH
+
 #### Push to your remote branch
 * Periodically, you should pull in new changes on the remote server to your local machine. To do that, do as follows:
 * After committing all changes, switch to the master branch -> `git checkout master`
