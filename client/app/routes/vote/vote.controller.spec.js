@@ -4,6 +4,7 @@ describe('Controller: VoteCtrl', function () {
 
   // load the controller's module
   beforeEach(module('realizeChangeApp'));
+  beforeEach(module('socketMock'));
 
   var VoteCtrl, scope;
 

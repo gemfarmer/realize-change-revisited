@@ -4,6 +4,7 @@ describe('Service: Dreams', function () {
 
   // load the service's module
   beforeEach(module('realizeChangeApp'));
+  beforeEach(module('socketMock'));
 
   // instantiate service
   var Dreams;

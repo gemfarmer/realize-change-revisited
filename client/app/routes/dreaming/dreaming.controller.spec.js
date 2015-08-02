@@ -4,7 +4,8 @@ describe('Controller: DreamingCtrl', function () {
 
   // load the controller's module
   beforeEach(module('realizeChangeApp'));
-
+  beforeEach(module('socketMock'));
+  
   var DreamingCtrl, scope;
 
   // Initialize the controller and a mock scope

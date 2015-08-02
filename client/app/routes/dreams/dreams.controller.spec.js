@@ -4,6 +4,7 @@ describe('Controller: DreamsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('realizeChangeApp'));
+  beforeEach(module('socketMock'));
 
   var DreamsCtrl, scope;
 

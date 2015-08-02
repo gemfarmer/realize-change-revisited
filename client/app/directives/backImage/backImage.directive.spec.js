@@ -15,6 +15,5 @@ describe('Directive: backImage', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<back-image></back-image>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the backImage directive');
   }));
 });
