@@ -15,19 +15,21 @@
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}"><i class="fa fa-{{item.iconName}}"></i>{{item.title}}</a>
+            <a ng-show="isLoggedIn() && !isAdmin()" ng-href="{{item.link}}"><i class="fa fa-{{item.iconName}}"></i>{{item.title}}</a>
         </li>
-        <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+        <li ng-show="isAdmin() && isLoggedIn()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin {{isAdmin}}</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Login</a></li>
         <li ng-show="isLoggedIn()">
-          <img id="profile-picture" src="{{userInfo.profile_img}}"/>
+          <img ng-if="userInfo" id="profile-picture" src="{{userInfo.profileImage}}"/>
+          <!-- <img id="profile-picture" src="https://graph.facebook/{{currentUser.facebook.id}}/picture"/> -->
+          <!-- <img id="profile-picture" ng-src="{{currentUser.profilePicture}}"/> -->
 
-          <p class="navbar-text">
-            Hello, {{ userInfo.first_name }}
+          <p ng-if="userInfo" class="navbar-text">
+            Hello, {{ userInfo.firstName }}
           </p> 
         </li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>

@@ -5,6 +5,12 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
 
     $scope.userInfo = UserInfo;
+        // console.log('UserInfo', UserInfo)
+    $scope.currentUser.profilePicture = $scope.currentUser.facebook ? 'http://graph.facebook/'+$scope.currentUser.facebook.id+'/picture' 
+                                                                    : "";
+    
+    
+
     $scope.menu = [{
       'title': 'Begin Dreaming',
       'link': '/dreaming',
@@ -27,6 +33,7 @@ angular.module('realizeChangeApp')
       'iconName':'info-circle'
     }];
 
+    console.log(Auth, Auth.isLoggedIn, Auth.isAdmin)
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;

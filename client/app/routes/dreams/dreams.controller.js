@@ -18,6 +18,6 @@ angular.module('realizeChangeApp')
     });
     $scope.selectParam = function(param){
     	$scope.searchParam = param;
-    }
+    };
   });
 

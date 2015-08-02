@@ -8,8 +8,8 @@ angular.module('realizeChangeApp')
             'background-image': 'url(' + url +')',
             'background-size' : 'cover'
         });
-        if (attrs.backSize == 'full'){
-        	console.log($window)
+        if (attrs.backSize === 'full'){
+        	// console.log($window)
         	element.css({
         		'height' :$window.innerHeight
         	

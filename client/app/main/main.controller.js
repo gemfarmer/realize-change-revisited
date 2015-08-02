@@ -5,7 +5,7 @@ angular.module('realizeChangeApp')
     $scope.awesomeThings = [];
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
-    console.log(Auth)
+
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;

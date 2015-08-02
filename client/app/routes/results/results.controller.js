@@ -24,9 +24,9 @@ angular.module('realizeChangeApp')
     		$scope.parameter = 'votes';
     	}
     	
-    }
+    };
     $scope.showVotes = function(votes){
     	$scope.votesShown = votes;
-    }
+    };
 
   });
