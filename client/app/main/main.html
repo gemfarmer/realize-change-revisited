@@ -1,59 +1,41 @@
-
-<!-- <img src="assets/images/starry_night.jpg" alt="starry night"> -->
-<div ng-if="!isLoggedIn" back-image="assets/images/stars2.jpg" back-size="full">
-  <div class="container landing-wrapper">
-  <h1>Think Dream Tank</h1>
-      <!-- <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
-        <i class="fa fa-google-plus"></i> Connect with Google+
-      </a> -->
-      <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
-        <i class="fa fa-facebook"></i> Connect with Facebook
-      </a>
-  </div>
-</div>
-
-<div ng-if="isLoggedIn" back-image="assets/images/stars2.jpg" back-size="full">
+<div>
   <div ng-include="'components/navbar/navbar.html'" ></div>
-
-  <!-- <footer class="footer">
-  <div class="container">
-      <p>Brian Hedberg |
-         <a href="https://github.com/gemfarmer">gemfarmer</a></p>
-  </div>
-</footer> -->
-</div>
-<!-- <header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header> -->
+  <div class="container page">
+    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
+      <i class="fa fa-facebook"></i> Connect with Facebook
+    </a>
 
 
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-       <a href="http://realizechange.herokuapp.com/"> http://realizechange.herokuapp.com/</a>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
+    <div class="mainText row">
+      <h1 id="titleBody">About Us</h1>
+      <p id="textBody">RealizeChange is a crowd-sourced and crowd-funded project that provides individuals and institutional partners with the tools necessary to:</p>
+      <ul style="list-style-type: none;">
+        <li>
+          <i class="fa fa-microphone">amplify the voice of the people</i>
+        </li>
+        <li> 
+          <i class="fa fa-retweet">open lines of communication</i>
+        </li>
+        <li> 
+          <i class="fa fa-group">  collaboratively build our shared dreams and goals</i>
+        </li>
       </ul>
+      <p></p>
+      <h3 id="t2">Mission:</h3>
+      <p id="t2">The mission of this project is to build an interactive, incentivized website that allows people from all walks of life to participate in a plan for the future. This project will dynamically evolve with time as its goals are better integrated and informed by participants. The website will aim to accomplish three objectives: voice peoples dreams and goals for the future, visualize and learn about the dreams of others, and incentivize collaboration and project building. </p>
+      <p id="2">The ultimate goal of this project is to be accessible and fun for people of ALL backgrounds and to empower them to Dream and co-create an equitable and representative plan for our future. Join us on this journey.  </p>
+      <p id="2"> 
+        <span class="boldText">Want to get involved? </span>This project is 100% supported by the efforts of volunteers. <a href="mailto:realizechange13@gmail.com">Email us </a>and Spread the word.</p><a href="http://ideas.makingallvoicescount.org/" target="blank">Vote </a>for us on Idea Scale<p id="2">If we win, 100% of the Award money will go directly into the development of RealizeChange. </p>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MZ8TYAL3NBYVJ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal- The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
     </div>
-  </div> -->
 
-<!-- 
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
+  </div>
 
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
-</div> -->
+</div>
+
+
+
+
+
 
 

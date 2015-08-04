@@ -31,6 +31,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 	  }
 
 }
+.page{
+	padding-top: 50px;
+}
 
 
 
@@ -39,10 +42,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'main/main.scss';
-@import 'routes/about/about.scss';
 @import 'routes/dreaming/dreaming.scss';
 @import 'routes/dreams/dreams.scss';
 @import 'routes/results/results.scss';
 @import 'routes/vote/vote.scss';
 @import 'modal/modal.scss';
+@import 'navbar/navbar.scss';
 // endinjector

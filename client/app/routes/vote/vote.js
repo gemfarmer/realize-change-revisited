@@ -6,6 +6,7 @@ angular.module('realizeChangeApp')
       .state('vote', {
         url: '/vote',
         templateUrl: 'app/routes/vote/vote.html',
-        controller: 'VoteCtrl'
+        controller: 'VoteCtrl',
+        authenticate: true
       });
   });

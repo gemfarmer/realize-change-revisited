@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth, User, UserInfo) {
+  .controller('NavbarCtrl', function ($scope, $location, Auth, User, UserInfo, $modal,$rootScope) {
     $scope.currentUser = Auth.getCurrentUser();
 
     $scope.userInfo = UserInfo;
@@ -27,10 +27,6 @@ angular.module('realizeChangeApp')
       'title': 'Results',
       'link': '/results',
       'iconName':'flag-checkered'
-    },{
-      'title': 'About Us',
-      'link': '/about',
-      'iconName':'info-circle'
     }];
 
     console.log(Auth, Auth.isLoggedIn, Auth.isAdmin)
@@ -47,4 +43,13 @@ angular.module('realizeChangeApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+    $rootScope.isCollapsed = true;
+    $scope.openMenu = function(){
+      if (!$rootScope.isCollapsed){
+        $location.path('/');
+      }
+      $rootScope.isCollapsed = !$rootScope.isCollapsed;
+    }
+
+
   });
