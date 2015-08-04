@@ -6,6 +6,7 @@ angular.module('realizeChangeApp')
       .state('results', {
         url: '/results',
         templateUrl: 'app/routes/results/results.html',
-        controller: 'ResultsCtrl'
+        controller: 'ResultsCtrl',
+        authenticate: true
       });
   });

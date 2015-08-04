@@ -45,7 +45,12 @@ angular.module('realizeChangeApp', [
   .run(function ($rootScope, $location, Auth) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
+      console.log('$stateChangeStart', event)
+      console.log("Event", event)
+      console.log("next", next)
+      console.log("next.authenticate", next.authenticate)
       Auth.isLoggedInAsync(function(loggedIn) {
+        console.log("loggedIn",loggedIn)
         if (next.authenticate && !loggedIn) {
           $location.path('/login');
         }

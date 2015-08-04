@@ -6,6 +6,7 @@ angular.module('realizeChangeApp')
       .state('dreams', {
         url: '/dreams',
         templateUrl: 'app/routes/dreams/dreams.html',
-        controller: 'DreamsCtrl'
+        controller: 'DreamsCtrl',
+        authenticate: true
       });
   });
