@@ -27,6 +27,11 @@ angular.module('realizeChangeApp')
       'title': 'Results',
       'link': '/results',
       'iconName':'flag-checkered'
+    },
+    {
+      'title': 'Resources',
+      'link': '/resources',
+      'iconName':'book'
     }];
 
     console.log(Auth, Auth.isLoggedIn, Auth.isAdmin)
