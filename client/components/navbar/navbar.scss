@@ -49,3 +49,9 @@
 		background-color: transparent;
 	}
 }
+@media screen and (max-width: $screen-lg-min) {
+  .nav-text:not(.menu-open){
+	display: none;
+
+	}
+}
