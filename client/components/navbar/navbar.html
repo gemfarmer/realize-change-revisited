@@ -15,7 +15,7 @@
     <div id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-show="isLoggedIn() && !isAdmin()" ng-href="{{item.link}}"><i class="fa fa-{{item.iconName}}"></i>{{item.title}}</a>
+            <a ng-show="isLoggedIn() && !isAdmin()" ng-href="{{item.link}}"><i class="fa fa-{{item.iconName}}"></i><span class="nav-text" ng-class="{'menu-open': !$root.isCollapsed}">{{item.title}}</span></a>
         </li>
         <li ng-show="isAdmin() && isLoggedIn()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
       </ul>
