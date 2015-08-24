@@ -9,8 +9,8 @@ module.exports = {
   DOMAIN:           'http://localhost:9000',
   SESSION_SECRET:   'realizechange-secret',
 
-  FACEBOOK_ID:      'id',
-  FACEBOOK_SECRET:  'secret',
+  FACEBOOK_ID:      '1110526725629765',
+  FACEBOOK_SECRET:  'da55bc76ae3d0b43a7c76555af9f682c',
 
   TWITTER_ID:       'app-id',
   TWITTER_SECRET:   'secret',
