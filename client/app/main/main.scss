@@ -39,31 +39,92 @@
 }
 
 .not-landing .navbar-default{
-      background-color: transparent;
+    background-color: transparent;
 
 }
 // .navbar-default {
-//     .navbar-nav > li > a {
-//         color: #cecece;
-//         &:hover{
-//             color:white;
-//         }
-//     }
-//     .navbar-brand{
-//         color: #cecece;
-//         &:hover{
-//             color:white;
-//         }
-//     }
-//     .navbar-text{
-//         cursor: pointer;
-//         color: #cecece;
-//         &:hover{
-//             color:white;
-//         }
-//     }
-// }
+    //     .navbar-nav > li > a {
+	//         color: #cecece;
+	//         &:hover{
+	    //             color:white;
+	    //         }
+	//     }
+    //     .navbar-brand{
+	//         color: #cecece;
+	//         &:hover{
+	    //             color:white;
+	    //         }
+	//     }
+    //     .navbar-text{
+	//         cursor: pointer;
+	//         color: #cecece;
+	//         &:hover{
+	    //             color:white;
+	    //         }
+	//     }
+    // }
+
+span.nav-text:hover, .navbar-brand:hover {
+			 text-decoration:underline;
+		     }
+
+span.nav-text, .navbar-text, .navbar-brand, a.logout {
+    color:#f0d5c0 !important;
+}
+
+span.nav-text:active {
+    color: black;
+}
 
 .mainText {
-    // color:white;
+    color: #f0d5c0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-image: url("http://cognatory.com:9000/assets/images/spacebg23.jpg") !important;
+    /* background-image: url("http://cognatory.com:9000/assets/images/stars2.jpg"); */
+    background-size: cover;
+}
+
+.navbar {
+    background-color: rgba(0,0,0,1) !important;
+}
+
+.navbar {
+    border-style: solid;
+    border-color: #f0d5c0 !important;
+    border-width: 2px;
+}
+
+* {
+    background-color: rgba(0, 0, 0, 0.0) !important;
+    opacity: 1 !important;
+    font-size: 18px !important;
+}
+
+.clickable, blockquote, p, .btn, td, label, th, input, * {
+    color:  #f0d5c0;
+}
+
+.clickable:hover {
+    text-decoration: underline;
+}
+
+.page {
+    background-color: rgba(255, 255, 255, 1.0);
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    width: 100%;
+    height: 100%;
+}
+
+.input-group {
+    width: 50%;
 }

@@ -14,24 +14,24 @@ angular.module('realizeChangeApp')
     $scope.menu = [{
       'title': 'Begin Dreaming',
       'link': '/dreaming',
-      'iconName':'cloud'
+      'iconName':''
     },{
       'title': 'Dreams',
       'link': '/dreams',
-      'iconName':'globe'
+      'iconName':''
     },{
-      'title': 'Vote4Change',
+      'title': 'Vote4Goals',
       'link': '/vote',
-      'iconName':'thumbs-o-up'
+      'iconName':''
     },{
-      'title': 'Results',
+      'title': 'Shared Goals',
       'link': '/results',
-      'iconName':'flag-checkered'
+      'iconName':''
     },
     {
       'title': 'Resources',
       'link': '/resources',
-      'iconName':'book'
+      'iconName':''
     }];
 
     console.log(Auth, Auth.isLoggedIn, Auth.isAdmin)
