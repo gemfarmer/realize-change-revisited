@@ -1,7 +1,7 @@
 <div class="navbar navbar-default navbar-static-top fixed-top" 
      ng-controller="NavbarCtrl" 
      ng-class="{'not-landing': $state != 'main', 'open' : !$root.isCollapsed}" 
-     back-image="assets/images/stars2.jpg">
+     >
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="openMenu()" ng-if="$root.isCollapsed">
@@ -36,7 +36,7 @@
           <span ng-if="$root.isCollapsed" class="glyphicon glyphicon-cog"></span>
           <span ng-if="!$root.isCollapsed">Settings</span>
           </a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a class="logout" href="" ng-click="logout()">Logout</a></li>
       </ul>
     </div>
   </div>

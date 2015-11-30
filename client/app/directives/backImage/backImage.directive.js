@@ -3,11 +3,12 @@
 angular.module('realizeChangeApp')
   .directive('backImage', function ($window) {
     return function(scope, element, attrs){
-        var url = attrs.backImage;
+	var url = "assets/images/spacebg23.jpg"
+        // var url = attrs.backImage;
      
         element.css({
             'background-size' : 'cover',
-            'overflow':'scroll'
+            'overflow':'hidden'
         });
         if (url == 'blank'){
             element.css({
