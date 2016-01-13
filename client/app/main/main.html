@@ -1,7 +1,7 @@
 <div>
   <div ng-include="'components/navbar/navbar.html'" ></div>
   <div class="container page">
-    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
+    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')" ga-track-event="['fb login', 'login', 'login']">
       <i class="fa fa-facebook"></i> Connect with Facebook
     </a>
 
