@@ -6,7 +6,6 @@ angular.module('realizeChangeApp')
     $scope.currentUser = Auth.getCurrentUser();
     $scope.isLoggedIn = Auth.isLoggedIn();
 
-
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
