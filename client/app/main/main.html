@@ -1,48 +1,57 @@
 <div>
   <div ng-include="'components/navbar/navbar.html'" ></div>
   <div class="container page">
-    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
-      <i class="fa fa-facebook"></i> Connect with Facebook
-    </a>
-
 
     <div class="mainText row">
-      <h1 id="titleBody">About Us</h1>
-      <p id="textBody">Think Dream Tank is a crowd-sourced and community-led project that aims to create a space where people of all ages and backgrounds can dream about their future and share a conversation about their dreams and hopes with others.</p>
-      <ul style="list-style-type: none;">
-        <li>
-          <i class="fa fa-group"> Develop a virtual and physical space where time is spent developing one’s dreams and goals for the future,</i>
-        </li>
-        <li> 
-          <i class="fa fa-retweet"> Explore in real-time which resources people find most helpful as well as current barriers,</i>
-        </li>
-        <li> 
-          <i class="fa fa-microphone"> Create data visualization and automated analysis tools to foster learning about our shared dreams and the practices that lead to optimal goal achievement.</i>
-        </li>
+      <h1 id="titleBody">Think Dream Tank</h1>
+      <p id="textBody">Think Dream Tank is a crowd sourced and community led project that aims to create a space where people from any age and background can dream about their future and share a conversation about their dreams and hopes with others.</p>
+      <p>Specifically, this project aims to:</p>
+      <ul style="list-style-type: decimal;">
+        <li>Develop a virtual and physical space where time is spent developing one’s dreams and goals for the future.</li>
+        <li>Explore and develop helpful resources as well as understand barriers to creativity and achievement.</li>
+        <li>Build a network to foster learning about our shared dreams.</li>
       </ul>
       <p></p>
-      <h3 id="t2">Mission:</h3>
-      <p id="t2">This project utilizes insights from psychology, sociology and the latest in technology to develop a platform for community engaged research on future oriented cognition where people can dream, aspire, and create a better future together.</p>
-      <p id="2"> 
-        <span class="boldText">Want to get involved? </span>This project is 100% supported by the efforts of volunteers. <a href="mailto:realizechange13@gmail.com">Email us </a>and Spread the word.</p><a href="http://ideas.makingallvoicescount.org/" target="blank">Vote </a>for us on Idea Scale<p id="2">If we win, 100% of the Award money will go directly into the development of RealizeChange. </p>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MZ8TYAL3NBYVJ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal- The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
+
+      <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
+        <i class="fa fa-facebook"></i> Connect with Facebook
+      </a>
     </div>
 
+    <section class="row" ng-if="!formSubmitted">
+      <form class="thing-form">
+        <h4><label>Tell us about your goals and dreams for the future...</label></h4>
+
+        <formgroup>
+          <label>What are your dreams for the future?</label>
+          <textarea type="text" class="form-control input-dream" placeholder="I want to own a yacht..." ng-model="dreaming.future"></textarea>
+          <label>What shared goals do you think we should work on?</label>
+          <textarea type="text" class="form-control input-dream" placeholder="Give everyone yachts..." ng-model="dreaming.world"></textarea>
+
+          <span>
+            <button type="submit" class="btn btn-primary btn-large" ng-click="addDreams()">Share goals and dreams</button>
+          </span>
+        </formgroup>
+      </form>
+    </section>
+
+    <section class="row" ng-if="formSubmitted">
+      <h3>Thanks for sharing your goals and dreams with the world.</h3>
+      <p>To see other people's goals and dreams, <a href="/signup">sign up</a></p>
+      <p>OR</p>
+      <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
+        <i class="fa fa-facebook"></i> Connect with Facebook
+      </a>
+
+    </section>
+
+    <footer>
+      <p id="2"> 
+        <span class="boldText">Want to get involved? </span>This project is 100% supported by the efforts of volunteers. <a href="mailto:thinkdreamtank@gmail.com">Email us </a>and Spread the word.</p><a href="http://ideas.makingallvoicescount.org/" target="blank"></a>
+      </p>
+       <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MZ8TYAL3NBYVJ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal- The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form> -->
+    </footer>
   </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="What are your dreams for the future?" ng-model="dreaming.future">
-      <input type="text" class="form-control" placeholder="How can we make a better world?" ng-model="dreaming.world">
-
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addDreams()">Add New</button>
-      </span>
-    </p>
-  </form>
-
 </div>
 
 

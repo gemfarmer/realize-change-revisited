@@ -105,6 +105,7 @@ angular.module('realizeChangeApp', [
       $rootScope.isCollapsed = false;
       Auth.isLoggedInAsync(function(loggedIn) {
         console.log("loggedIn",loggedIn)
+        
         if (next.authenticate && !loggedIn) {
           $location.path('/login');
         }

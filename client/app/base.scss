@@ -1,0 +1,17 @@
+.container {
+	max-width: 678px;
+}
+
+.page {
+	@media screen and (max-width: $screen-sm-min) {
+		margin-left: $base-padding;
+		margin-right: $base-padding;
+	}
+	padding-top: 75px;
+}
+.form-control {
+	@media screen and (max-width: $screen-xs-min) {
+		width: 100%;
+	}
+	max-width: 400px;
+}

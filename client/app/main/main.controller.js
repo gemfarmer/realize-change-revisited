@@ -41,8 +41,9 @@ angular.module('realizeChangeApp')
         world : $scope.dreaming.world,  
         votes: 0
       };
-
+      
       Dreams.add(newDream);
       $scope.dreaming = {};
+      $scope.formSubmitted = true;
     };
   });

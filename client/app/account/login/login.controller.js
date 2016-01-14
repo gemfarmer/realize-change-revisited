@@ -15,7 +15,7 @@ angular.module('realizeChangeApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/dreaming');
+          $location.path('/dreams');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
