@@ -1,29 +1,28 @@
 <div>
   <div ng-include="'components/navbar/navbar.html'" ></div>
   <div class="container page">
-    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')" ga-track-event="['fb login', 'login', 'login']">
+    <a class="btn btn-facebook" ng-hide="isLoggedIn" href="" ng-click="loginOauth('facebook')">
       <i class="fa fa-facebook"></i> Connect with Facebook
     </a>
 
 
     <div class="mainText row">
       <h1 id="titleBody">About Us</h1>
-      <p id="textBody">RealizeChange is a crowd-sourced and crowd-funded project that provides individuals and institutional partners with the tools necessary to:</p>
+      <p id="textBody">Think Dream Tank is a crowd-sourced and community-led project that aims to create a space where people of all ages and backgrounds can dream about their future and share a conversation about their dreams and hopes with others.</p>
       <ul style="list-style-type: none;">
         <li>
-          <i class="fa fa-microphone">amplify the voice of the people</i>
+          <i class="fa fa-group"> Develop a virtual and physical space where time is spent developing one’s dreams and goals for the future,</i>
         </li>
         <li> 
-          <i class="fa fa-retweet">open lines of communication</i>
+          <i class="fa fa-retweet"> Explore in real-time which resources people find most helpful as well as current barriers,</i>
         </li>
         <li> 
-          <i class="fa fa-group">  collaboratively build our shared dreams and goals</i>
+          <i class="fa fa-microphone"> Create data visualization and automated analysis tools to foster learning about our shared dreams and the practices that lead to optimal goal achievement.</i>
         </li>
       </ul>
       <p></p>
       <h3 id="t2">Mission:</h3>
-      <p id="t2">The mission of this project is to build an interactive, incentivized website that allows people from all walks of life to participate in a plan for the future. This project will dynamically evolve with time as its goals are better integrated and informed by participants. The website will aim to accomplish three objectives: voice peoples dreams and goals for the future, visualize and learn about the dreams of others, and incentivize collaboration and project building. </p>
-      <p id="2">The ultimate goal of this project is to be accessible and fun for people of ALL backgrounds and to empower them to Dream and co-create an equitable and representative plan for our future. Join us on this journey.  </p>
+      <p id="t2">This project utilizes insights from psychology, sociology and the latest in technology to develop a platform for community engaged research on future oriented cognition where people can dream, aspire, and create a better future together.</p>
       <p id="2"> 
         <span class="boldText">Want to get involved? </span>This project is 100% supported by the efforts of volunteers. <a href="mailto:realizechange13@gmail.com">Email us </a>and Spread the word.</p><a href="http://ideas.makingallvoicescount.org/" target="blank">Vote </a>for us on Idea Scale<p id="2">If we win, 100% of the Award money will go directly into the development of RealizeChange. </p>
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MZ8TYAL3NBYVJ"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal- The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form>
@@ -31,8 +30,20 @@
 
   </div>
 
-</div>
+  <form class="thing-form">
+    <label>Syncs in realtime across clients</label>
 
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="What are your dreams for the future?" ng-model="dreaming.future">
+      <input type="text" class="form-control" placeholder="How can we make a better world?" ng-model="dreaming.world">
+
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addDreams()">Add New</button>
+      </span>
+    </p>
+  </form>
+
+</div>
 
 
 
