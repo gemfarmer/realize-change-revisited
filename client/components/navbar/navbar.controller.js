@@ -12,10 +12,6 @@ angular.module('realizeChangeApp')
     
 
     $scope.menu = [{
-      'title': 'Begin Dreaming',
-      'link': '/dreaming',
-      'iconName':'cloud'
-    },{
       'title': 'Dreams',
       'link': '/dreams',
       'iconName':'globe'

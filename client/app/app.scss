@@ -23,30 +23,30 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 .not-landing {
 	.navbar-default{
-	      background-color: transparent;
-	      
-	      .navbar-nav .active a{
-	      	background-color: white;
-	      }
-	  }
-
-}
-.page{
-	padding-top: 75px;
+    background-color: transparent;
+    
+    .navbar-nav .active a{
+    	background-color: white;
+    }
+  }
 }
 
+@import 'variables.scss';
+@import 'base.scss';
 
 
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'base.scss';
 @import 'main/main.scss';
 @import 'routes/dreaming/dreaming.scss';
 @import 'routes/dreams/dreams.scss';
 @import 'routes/resources/resources.scss';
 @import 'routes/results/results.scss';
 @import 'routes/vote/vote.scss';
+@import 'variables.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
 // endinjector

@@ -5,18 +5,18 @@ angular.module('realizeChangeApp')
     $scope.voted = false;
 
     $http.get('/api/dreams/random').success(function(dream) {
-      $scope.dream = dream;
-      // console.log('random draem', dream)
-      // socket.syncUpdates('dream', $scope.dream);
-    });
-    $scope.loadRandomTwo = function(){
-	    $http.get('/api/dreams/randomTwo').success(function(randomDreams) {
-	      $scope.randomDreams = randomDreams;
-	      // console.log('randomTwo draem', randomDreams)
-	      // socket.syncUpdates('dream', $scope.dream);
-	    });
-	};
-	$scope.loadRandomTwo();
+        $scope.dream = dream;
+        // console.log('random draem', dream)
+        // socket.syncUpdates('dream', $scope.dream);
+      });
+      $scope.loadRandomTwo = function(){
+  	    $http.get('/api/dreams/randomTwo').success(function(randomDreams) {
+  	      $scope.randomDreams = randomDreams;
+  	      // console.log('randomTwo draem', randomDreams)
+  	      // socket.syncUpdates('dream', $scope.dream);
+  	    });
+  	};
+  	$scope.loadRandomTwo();
     $scope.voteThisDream = function(dream){
    		dream.votes ++;
     	$http.put('/api/dreams/' + dream._id, dream);
@@ -35,5 +35,9 @@ angular.module('realizeChangeApp')
     		$scope.loadRandomTwo();
     	},500);
     };
-   
+
+    $scope.newGoals = function() {
+      $scope.loadRandomTwo();
+    }
+ 
   });

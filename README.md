@@ -97,4 +97,33 @@
 Alternatively you can mess around with this on MongoLab
 * Go [here](https://www.mongolab.com/databases/heroku_mpvzvwk0) and play around!
 
+## Architecture
+This site is built using [Angular Fullstack Generator](https://github.com/angular-fullstack/generator-angular-fullstack)
 
+The generator is especially good for scaffolding out content. Do the following
+`$ yo angular-fullstack:[feature] [myfeature]`
+for any of the following features...
+
+###### Cleint
+* `directive`, 
+* `route`,
+* `controller`,
+* `filter`,
+* `directive`,
+* `service`,
+* `provider`,
+* `factory`,
+* `decorator`
+
+###### Server
+* `endpoint`
+
+## Deployment
+This site is deployed with heroku, using Angular Fullstack Generator's `buildcontrol` feature. [Directions to getting heroku configured](https://github.com/angular-fullstack/generator-angular-fullstack#heroku)
+Once that is set up, deployment workflow is as follows:
+
+`$ grunt` -> builds the site
+If the build fails and you feel confident that you aren't breaking anything
+`$ grunt --force` -> force build the site
+`$ grunt buildcontrol:heroku` -> push the site live
+`$ heroku open --app frozen-basin-2150` --> open site in your browser
