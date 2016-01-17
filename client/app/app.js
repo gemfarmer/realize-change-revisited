@@ -7,7 +7,8 @@ angular.module('realizeChangeApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'angular-google-analytics'
+  'angular-google-analytics',
+  'leaflet-directive'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, AnalyticsProvider) {
 

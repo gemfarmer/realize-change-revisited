@@ -80,6 +80,21 @@ exports.changePassword = function(req, res, next) {
   });
 };
 
+// Updates an existing thing in the DB.
+exports.update = function(req, res) {
+  console.log(req.body, req.params)
+  if(req.body._id) { delete req.body._id; }
+  User.findById(req.params.id, function (err, thing) {
+    if (err) { return handleError(res, err); }
+    if(!thing) { return res.send(404); }
+    var updated = _.merge(thing, req.body);
+    updated.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, thing);
+    });
+  });
+};
+
 /**
  * Get my info
  */

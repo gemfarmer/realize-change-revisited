@@ -8,9 +8,15 @@ var authTypes = ['github', 'twitter', 'facebook', 'google'];
 var UserSchema = new Schema({
   name: String,
   email: { type: String, lowercase: true },
+  dream_id: [ String ],
   role: {
     type: String,
     default: 'user'
+  },
+  location: {
+    zip: { type: Number },
+    latitude: { type: Number },
+    longitude: { type: Number }
   },
   hashedPassword: String,
   provider: String,

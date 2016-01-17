@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Dream = require('./dream.model');
+var User = require('./../user/user.model');
 
 // Get list of dreams
 exports.index = function(req, res) {
@@ -43,7 +44,13 @@ exports.randomTwo = function(req,res){
 // Creates a new dream in the DB.
 exports.create = function(req, res) {
   Dream.create(req.body, function(err, dream) {
-    console.log(dream)
+
+    User.findById(dream.user_id, function (err, user) {
+      user.dream_id.push(dream._id);
+      user.save();
+    });
+
+
     if(err) { return handleError(res, err); }
     return res.json(201, dream);
   });
