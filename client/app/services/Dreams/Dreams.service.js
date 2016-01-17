@@ -10,7 +10,11 @@ angular.module('realizeChangeApp')
 
 
     Dreams.prototype.add = function(newDream){
-    	$http.post('/api/dreams', newDream);
+    	$http.post('/api/dreams', newDream).then(function(data) {
+        console.log('return',data)
+        }, function(err){
+          console.log('err',err)
+        });
     };
 
     Dreams.prototype.delete = function(dream) {

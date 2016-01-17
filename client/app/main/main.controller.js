@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('MainCtrl', function ($scope, $http, socket, $window, Auth, Dreams) {
+  .controller('MainCtrl', function ($scope, $http, socket, $window, Auth, Dreams, User) {
     // $scope.awesomeThings = [];
     $scope.dreaming = {};
     $scope.currentUser = Auth.getCurrentUser();
@@ -36,11 +36,16 @@ angular.module('realizeChangeApp')
       if($scope.dreaming === {}) {
         return;
       }
+
       var newDream = { 
         future: $scope.dreaming.future, 
         world : $scope.dreaming.world,  
-        votes: 0
+        votes: 0, 
+        location: $scope.currentUser.location,
+        user_id: $scope.currentUser._id
       };
+      console.log('------')
+      console.log(newDream, $scope.currentUser)
       
       Dreams.add(newDream);
       $scope.dreaming = {};

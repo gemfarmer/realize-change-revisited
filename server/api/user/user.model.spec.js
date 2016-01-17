@@ -8,6 +8,7 @@ var user = new User({
   provider: 'local',
   name: 'Fake User',
   email: 'test@test.com',
+  zip: 55407,
   password: 'password'
 });
 

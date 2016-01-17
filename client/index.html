@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
       <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
       <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -41,6 +42,7 @@
 
     </script>
 
+      
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
@@ -57,10 +59,12 @@
       <script src="bower_components/angular-socket-io/socket.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/angular-google-analytics/dist/angular-google-analytics.min.js"></script>
+      <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+      <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
       <!-- endbower -->
       <script src="socket.io-client/socket.io.js"></script>
+      
     <!-- endbuild -->
-
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->

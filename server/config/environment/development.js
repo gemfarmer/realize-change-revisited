@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/realizechange-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

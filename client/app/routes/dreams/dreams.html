@@ -3,7 +3,7 @@
 
 <div class="page">
 
-  <ul>
+  <!-- <ul>
     <li><a ng-click="selectParam('future')" class="clickable">What are your dreams for the future?</a></li>
     <li><a ng-click="selectParam('world')" class="clickable">How can we make a better world?</a></li>
   </ul>
@@ -11,5 +11,11 @@
     <div class="col-xs-4 col-xs-offset-1 container" >
       <blockquote>{{dream[searchParam]}}</blockquote>
     </div>
-  </div>
+  </div> -->
+
+  <!-- <leaflet lf-center="center" height="480px" width="640px"></leaflet> -->
+  <!-- <leaflet markers="markers" center="osloCenter"></leaflet> -->
+  <button type="button" class="btn btn-primary padright" ng-click="markers.m1.icon=icon" ng-repeat="(key, icon) in icons">{{ key }}</button>
+  <leaflet center="eeuu" markers="markers" layers="layers" defaults="defaults" height="480px" width="640px"></leaflet>
 </div>
+

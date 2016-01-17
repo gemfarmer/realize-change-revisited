@@ -8,7 +8,13 @@ var DreamSchema = new Schema({
   world: String,
   active: Boolean,
   votes: Number,
-  flagged: Boolean
+  flagged: Boolean,
+  user_id: String,
+  location: {
+    zip: { type: Number },
+    latitude: { type: Number },
+    longitude: { type: Number }
+  }
 });
 
 DreamSchema.statics.random = function(cb) {
