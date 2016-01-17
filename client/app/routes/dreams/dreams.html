@@ -17,5 +17,14 @@
   <!-- <leaflet markers="markers" center="osloCenter"></leaflet> -->
   <button type="button" class="btn btn-primary padright" ng-click="markers.m1.icon=icon" ng-repeat="(key, icon) in icons">{{ key }}</button>
   <leaflet center="eeuu" markers="markers" layers="layers" defaults="defaults" height="480px" width="640px"></leaflet>
+
+  <section class="dream-feed">
+    <div ng-if="!voted" ng-repeat="dream in dreams">
+      <div class="col-xs-4 col-xs-offset-1 container" >
+        <blockquote>{{dream.future}}</blockquote>
+      </div>
+    </div>
+  </section>
 </div>
+
 
