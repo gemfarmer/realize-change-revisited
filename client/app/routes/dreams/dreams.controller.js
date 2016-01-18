@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', function ($scope, $http, socket, Dreams, User) {
+  .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', '$window', function ($scope, $http, socket, Dreams, User, $window) {
   	$scope.searchParam = 'world';
     $http.get('/api/dreams').success(function(dreams) {
       $scope.dreams = dreams;
@@ -23,52 +23,32 @@ angular.module('realizeChangeApp')
     	$scope.searchParam = param;
     };
 
+    $scope.resizeMap = {
+
+    }
+
+
     $scope.addMarker = function(dream, index) {
       console.log(dream, index)
-      $scope.markers['m'+index] = {
-        lat: +dream.location.latitude,
-        lng: +dream.location.longitude,
-        message: dream.future
-      }
+      var marker = L.marker([+dream.location.latitude, +dream.location.longitude]).addTo($scope.map);
+
+      var markerSettings = {
+            "iconUrl": "http://www.wennemar.com/wp-content/uploads/2015/09/bernie-1.png",
+            "iconSize": [20, 20],
+            "iconAnchor": [10, 10],
+            "popupAnchor": [0, -55],
+            "className": "dot"
+        }
+      marker.setIcon(L.icon(markerSettings));
+
     }
   
-    angular.extend($scope, {
-      eeuu: {
-        lat: 39,
-        lng: -99,
-        zoom: 4
-      },
-      layers: {
-        baselayers: {
-          xyz: {
-              name: 'OpenStreetMap (XYZ)',
-              url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              type: 'xyz'
-          }
-        },
-        overlays: {
-          wms: {
-            name: 'EEUU States (WMS)',
-            type: 'wms',
-            visible: true,
-            url: 'http://suite.opengeo.org/geoserver/usa/wms',
-            layerParams: {
-              layers: 'usa:states',
-              format: 'image/png',
-              transparent: true
-            }
-          }
-        }
-      },
-      markers: {
-          // m1: {
-          //     lat: 43,
-          //     lng: -90.13,
-          //     message: "I'm a static marker"
-          // },
-      },
-      defaults: {
-          scrollWheelZoom: false
-      }
-    });
+  // Provide your access token
+  L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VtZmFybWVyIiwiYSI6ImtNWkpLbHcifQ.jWx398eYRGPYROgOcxXjdQ';
+
+
+
+  $scope.map = L.mapbox.map('map', 'gemfarmer.4df00baa');
+
+
   }]);

@@ -31,7 +31,8 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
-      dist: 'dist'
+      dist: 'dist',
+      node_modules: 'node_modules'
     },
     express: {
       options: {
@@ -355,8 +356,14 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
             'assets/fonts/**/*',
-            'index.html'
+            'index.html',
+            '{components}mapbox-gl/dist/mapbox-gl.js'
           ]
+        }, {
+          expand:  true,
+          cwd: '<%= yeoman.node_modules %>',
+          dest: '<%= yeoman.dist %>/public',
+          src: 'mapbox-gl/dist/mapbox-gl.js'
         }, {
           expand: true,
           cwd: '.tmp/images',

@@ -118,6 +118,9 @@ for any of the following features...
 ###### Server
 * `endpoint`
 
+###### Mapping
+* Maps on the site are built using [Leaflet](http://leafletjs.com/) and [Mapbox](https://www.mapbox.com/). Map styling was done using [Mapbox Study Classic](https://www.mapbox.com/mapbox-studio-classic/). Edit online [here](https://www.mapbox.com/studio/).
+OR [Editor](https://www.mapbox.com/editor/#project)
 ## Deployment
 This site is deployed with heroku, using Angular Fullstack Generator's `buildcontrol` feature. [Directions to getting heroku configured](https://github.com/angular-fullstack/generator-angular-fullstack#heroku)
 Once that is set up, deployment workflow is as follows:

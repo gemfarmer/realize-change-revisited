@@ -16,7 +16,9 @@
   <!-- <leaflet lf-center="center" height="480px" width="640px"></leaflet> -->
   <!-- <leaflet markers="markers" center="osloCenter"></leaflet> -->
   <button type="button" class="btn btn-primary padright" ng-click="markers.m1.icon=icon" ng-repeat="(key, icon) in icons">{{ key }}</button>
-  <leaflet center="eeuu" markers="markers" layers="layers" defaults="defaults" height="480px" width="640px"></leaflet>
+  <!-- <leaflet center="eeuu" markers="markers" layers="layers" defaults="defaults" height="480px" width="640px"></leaflet> -->
+
+  <div class="map" id="map" height="480" width="640"></div>
 
   <section class="dream-feed">
     <div ng-if="!voted" ng-repeat="dream in dreams">
