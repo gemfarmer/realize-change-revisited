@@ -20,13 +20,18 @@
 
   <div class="map" id="map" height="480" width="640"></div>
 
-  <section class="dream-feed">
-    <div ng-if="!voted" ng-repeat="dream in dreams">
-      <ul>
-        <li>{{dream.future}}</li>
+  <section ng-if="dreamFeedIsOpen" class="dream-feed">
+    <button class="btn btn-primary dream-toggle dream-close" ng-click="dreamFeed('close')">Close</button>
+    <h4>Recent Dreams</h4>
+    <hr style="border-top:1px solid #4a4a4a;"/>
+    <div ng-repeat="dream in dreams">
+      
+      <ul class="dream-feed-list">
+        <li><i class="fa fa-cloud"></i> {{dream.future}}</li>
       </div>
     </ul>
   </section>
+  <button ng-if="!dreamFeedIsOpen" class="btn btn-primary dream-toggle" ng-click="dreamFeed('open')">Dreams</button>
 </div>
 
 

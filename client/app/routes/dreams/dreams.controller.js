@@ -3,6 +3,8 @@
 angular.module('realizeChangeApp')
   .controller('DreamsCtrl', [ '$scope', '$http', 'socket', 'Dreams', 'User', '$window', function ($scope, $http, socket, Dreams, User, $window) {
   	$scope.searchParam = 'world';
+    $scope.dreamFeedIsOpen = true;
+
     $http.get('/api/dreams').success(function(dreams) {
       $scope.dreams = dreams;
       socket.syncUpdates('dream', $scope.dreams);
@@ -28,11 +30,20 @@ angular.module('realizeChangeApp')
       $('.map').height(newHeight)
     }
 
+    $scope.dreamFeed = function(status) {
+      if (status === 'open') {
+        $scope.dreamFeedIsOpen = true;
+      } else {
+        $scope.dreamFeedIsOpen = false;
+      }
+      
+    }
+
     $scope.addMarker = function(dream, index) {
       var coords = [+dream.location.latitude, +dream.location.longitude],
         options = {
           title: dream.future,
-          clickable: true
+          clickable: true,
         },
         markerSettings = {
             "iconUrl": "http://www.wennemar.com/wp-content/uploads/2015/09/bernie-1.png",
@@ -44,7 +55,7 @@ angular.module('realizeChangeApp')
         markerOpacity = .5;
 
       var marker = L.marker(coords, options).addTo($scope.map)
-        // .bindPopup(dream.future)
+        .bindPopup(dream.future)
         .setIcon(L.icon(markerSettings))
         .setOpacity(markerOpacity);
         
@@ -60,7 +71,10 @@ angular.module('realizeChangeApp')
   L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VtZmFybWVyIiwiYSI6ImtNWkpLbHcifQ.jWx398eYRGPYROgOcxXjdQ';
 
    // initialize map
-  $scope.map = L.mapbox.map('map', 'gemfarmer.4df00baa');
+  $scope.map = L.mapbox.map('map', 'gemfarmer.4df00baa', {
+    center: [ 33.7891, 44.9225 ], // starting position
+    zoom: 2 // starting zoom
+  });
   $scope.resizeMap();
 
 
