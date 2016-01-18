@@ -46,9 +46,11 @@ angular.module('realizeChangeApp')
           clickable: true,
         },
         markerSettings = {
-            "iconUrl": "http://www.wennemar.com/wp-content/uploads/2015/09/bernie-1.png",
-            "iconSize": [20, 20],
-            "iconAnchor": [10, 10],
+            // "iconUrl": "assets/images/Star7.png",
+            // "iconUrl": "assets/images/star5.png", // good contrast against white
+            "iconUrl": "assets/images/Star8.png",
+            "iconSize": [30, 30],
+            "iconAnchor": [15, 15],
             "popupAnchor": [0, -55],
             "className": "dot"
         },

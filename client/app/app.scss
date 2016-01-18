@@ -31,6 +31,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   }
 }
 
+body {
+    font-family: "Avenir Next", "Helvetica Neue Light", "Helvetica Neue", "Helvetica";
+}
+
 @import 'variables.scss';
 @import 'base.scss';
 
@@ -50,4 +54,5 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'variables.scss';
 @import 'modal/modal.scss';
 @import 'navbar/navbar.scss';
+@import 'sideNav/sideNav.scss';
 // endinjector
