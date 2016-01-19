@@ -22,7 +22,8 @@
       "googleAuth": true,
       "facebookAuth": true,
       "twitterAuth": true
-    }
+    },
+    "generatorVersion": "3.2.0"
   },
   "generator-ng-component": {
     "routeDirectory": "client/app/",
