@@ -47,3 +47,33 @@
     margin-bottom: $base-padding;
 }
 
+.hero-image {
+    width: 300px;
+    float: left;
+    margin-right: $base-padding;
+}
+
+.list-primary {
+    list-style-type: none;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+    .hero-image {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: $base-padding;
+    }
+
+    p, 
+    .row {
+        margin-left: $base-padding;
+        margin-right: $base-padding;
+    }
+}
+
+@media screen and (max-width: $screen-xs-min) {
+    .hero-image {
+        width: 100%;
+        margin-left: 0;
+    }
+}
