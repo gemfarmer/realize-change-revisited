@@ -9,8 +9,8 @@ angular.module('realizeChangeApp')
       $scope.dreams = dreams;
       socket.syncUpdates('dream', $scope.dreams);
 
-      dreams.forEach(function(dream, i){
-        $scope.addMarker(dream, i);  
+      dreams.forEach(function(dream){
+        $scope.addMarker(dream);  
       });
     });
 
@@ -39,7 +39,26 @@ angular.module('realizeChangeApp')
       
     }
 
-    $scope.addMarker = function(dream, index) {
+    $scope.updateMarker = function(dream) {
+
+      var markerSettings = {
+          "iconUrl": "assets/images/Star7.png",
+          "iconSize": [30, 30],
+          "iconAnchor": [15, 15],
+          "popupAnchor": [0, -55],
+          "className": "dot"
+      }
+
+      _.forEach($scope.markerList, function (marker) {
+        if (marker.id === dream._id) {
+          marker.setIcon(L.icon(markerSettings))
+        }
+      });
+    }
+
+    $scope.markerList = [];
+
+    $scope.addMarker = function(dream) {
       var coords = [+dream.location.latitude, +dream.location.longitude],
         options = {
           title: dream.future,
@@ -60,6 +79,9 @@ angular.module('realizeChangeApp')
         .bindPopup(dream.future)
         .setIcon(L.icon(markerSettings))
         .setOpacity(markerOpacity);
+
+      marker.id = dream._id;
+      $scope.markerList.push(marker)
         
       // marker.on('click', function(e) {
       //   // e.target.openPopup()
@@ -68,21 +90,26 @@ angular.module('realizeChangeApp')
       // marker._leaflet_id;
 
     }
+
+    $scope.showOnMap = function (dream) {
+      console.log(dream)
+      $scope.updateMarker(dream);
+    }
   
-  // Provide your access token
-  L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VtZmFybWVyIiwiYSI6ImtNWkpLbHcifQ.jWx398eYRGPYROgOcxXjdQ';
+    // Provide your access token
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZ2VtZmFybWVyIiwiYSI6ImtNWkpLbHcifQ.jWx398eYRGPYROgOcxXjdQ';
 
-   // initialize map
-  $scope.map = L.mapbox.map('map', 'gemfarmer.4df00baa', {
-    center: [ 33.7891, 44.9225 ], // starting position
-    zoom: 2 // starting zoom
-  });
-  $scope.resizeMap();
+     // initialize map
+    $scope.map = L.mapbox.map('map', 'gemfarmer.4df00baa', {
+      center: [ 33.7891, 44.9225 ], // starting position
+      zoom: 2 // starting zoom
+    });
+    $scope.resizeMap();
 
 
-  angular.element($window).bind('resize', function(){
-     $scope.resizeMap();
-   });
+    angular.element($window).bind('resize', function(){
+       $scope.resizeMap();
+     });
 
 
   }]);
