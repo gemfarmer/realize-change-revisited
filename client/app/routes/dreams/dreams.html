@@ -23,7 +23,7 @@
 
   <section ng-if="dreamFeedIsOpen" class="dream-feed">
     <button class="btn btn-primary dream-toggle dream-close" ng-click="dreamFeed('close')"><i class="fa fa-times"></i></button>
-    <h4>Recent Dreams</h4>
+    <h4>Dream stream</h4>
     <hr style="border-top:1px solid #4a4a4a;"/>
     <div ng-repeat="dream in dreams">
       
@@ -32,7 +32,7 @@
       </div>
     </ul>
   </section>
-  <button ng-if="!dreamFeedIsOpen" class="btn btn-primary dream-toggle" ng-click="dreamFeed('open')">Dreams</button>
+  <button ng-if="!dreamFeedIsOpen" class="btn btn-primary dream-toggle" ng-click="dreamFeed('open')">Stream</button>
 </div>
 
 

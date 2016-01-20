@@ -6,7 +6,7 @@
 	top: 0px;
 	z-index: 9000;
 	padding-left: $base-padding;
-	position: absolute;
+	position: fixed;
 	overflow-y: auto;
 	&.open {
 		left: 0px;
@@ -39,7 +39,7 @@
 .navbar-text {
 	color: white;
 	display: inline-block;
-	min-width: 200px;
+	min-width: 150px;
 }
 
 .menuItem {
