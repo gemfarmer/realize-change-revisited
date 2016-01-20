@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('realizeChangeApp')
-  .controller('MainCtrl', function ($scope, $http, socket, $window, Auth, Dreams, User) {
+  .controller('MainCtrl', [ '$scope', '$http', 'socket', '$window', 'Auth', 'Dreams', 'User', '$modal', function ($scope, $http, socket, $window, Auth, Dreams, User, $modal) {
     // $scope.awesomeThings = [];
     $scope.dreaming = {};
     $scope.currentUser = Auth.getCurrentUser();
@@ -51,4 +51,15 @@ angular.module('realizeChangeApp')
       $scope.dreaming = {};
       $scope.formSubmitted = true;
     };
-  });
+
+    $scope.openWarmupModal = function () {
+      $modal.open({
+        templateUrl: 'app/main/warmupModal.html',
+        controller: 'warmupModalCtrl'
+      });
+  }
+
+  }]).controller('warmupModalCtrl', [ '$scope', function ($scope) { 
+    
+  }]);
+  
