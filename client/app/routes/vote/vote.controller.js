@@ -38,6 +38,6 @@ angular.module('realizeChangeApp')
 
     $scope.newGoals = function() {
       $scope.loadRandomTwo();
-    }
+    };
  
   });

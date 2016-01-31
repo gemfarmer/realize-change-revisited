@@ -356,14 +356,8 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
             'assets/fonts/**/*',
-            'index.html',
-            '{components}mapbox-gl/dist/mapbox-gl.js'
+            'index.html'
           ]
-        }, {
-          expand:  true,
-          cwd: '<%= yeoman.node_modules %>',
-          dest: '<%= yeoman.dist %>/public',
-          src: 'mapbox-gl/dist/mapbox-gl.js'
         }, {
           expand: true,
           cwd: '.tmp/images',

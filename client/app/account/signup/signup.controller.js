@@ -35,18 +35,15 @@ angular.module('realizeChangeApp')
               $scope.errors[field] = error.message;
             });
           });
-        }
+        };
 
         navigator.geolocation.getCurrentPosition(function(location){
-          console.log(location)
-          createUser(location)
+          // console.log(location);
+          createUser(location);
         }, function(er) {
-          console.log('secon handler', er)
+          console.warn('secon handler', er);
           createUser();
         });
-
-
-
       }
     };
 
