@@ -39,20 +39,39 @@ angular.module('realizeChangeApp')
       
     }
 
+    $scope.markerSettings = {
+      default: {
+        // "iconUrl": "assets/images/Star7.png",
+        // "iconUrl": "assets/images/star5.png", // good contrast against white
+        "iconUrl": "assets/images/Star8.png",
+        "iconSize": [30, 30],
+        "iconAnchor": [15, 15],
+        "popupAnchor": [0, -55],
+        "className": "dot"
+      },
+      highlight: {
+        "iconUrl": "assets/images/Star7.png",
+        "iconSize": [30, 30],
+        "iconAnchor": [15, 15],
+        "popupAnchor": [0, -55],
+        "className": "dot"
+      }
+    }
+
     $scope.updateMarker = function(dream) {
 
-      var markerSettings = {
-          "iconUrl": "assets/images/Star7.png",
-          "iconSize": [30, 30],
-          "iconAnchor": [15, 15],
-          "popupAnchor": [0, -55],
-          "className": "dot"
-      }
+      $scope.resetMarkers()
 
       _.forEach($scope.markerList, function (marker) {
         if (marker.id === dream._id) {
-          marker.setIcon(L.icon(markerSettings))
+          marker.setIcon(L.icon($scope.markerSettings.highlight))
         }
+      });
+    }
+
+    $scope.resetMarkers = function () {
+      _.forEach($scope.markerList, function(marker) {
+        marker.setIcon(L.icon($scope.markerSettings.default));
       });
     }
 
@@ -77,7 +96,7 @@ angular.module('realizeChangeApp')
 
       var marker = L.marker(coords, options).addTo($scope.map)
         .bindPopup(dream.future)
-        .setIcon(L.icon(markerSettings))
+        .setIcon(L.icon($scope.markerSettings.default))
         .setOpacity(markerOpacity);
 
       marker.id = dream._id;
