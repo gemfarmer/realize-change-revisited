@@ -1,3 +1,4 @@
+/* jshint ignore:start */
 'use strict';
 
 angular.module('realizeChangeApp')
@@ -124,3 +125,6 @@ angular.module('realizeChangeApp')
 
 
   }]);
+/* jshint ignore:end */
+
+
