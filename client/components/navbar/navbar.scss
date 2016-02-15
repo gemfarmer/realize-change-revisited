@@ -3,7 +3,7 @@
 	width:100%;
 	overflow: hidden;
 	height: 50px !important;
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 	&.open{
 		overflow: auto;
 		height: 100% !important;
@@ -50,8 +50,63 @@
 	}
 }
 @media screen and (max-width: $screen-lg-min) {
-  .nav-text:not(.menu-open){
-	display: none;
+}
 
+.navbar-brand {
+	font-size: 30px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+	color: $navy;
+}
+
+.navbar.navbar-default {
+	background: $eggshell-blue;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	background: $navy;
+	color: $eggshell-blue;
+	&:hover,
+	&:focus {
+		background: $navy;
+		color: $eggshell-blue;
+	}
+	a:hover, a:focus {
+		background: $navy;
+		color: white;
+	}
+}
+
+.navbar-container {
+	margin-left: 50px;
+}
+
+.navItem-top {
+	float: right;
+	padding: 5px;
+	&:hover,
+	&:focus {
+		// background: $navy;
+		a {
+			background: $navy;
+			color: white;
+		}
+	}
+	a {
+		&:hover,
+		&:focus {
+			background: $navy;
+		}
+	}
+}
+
+.navbar-right > li > a {
+	color: $navy;
+	&:focus,
+	&:hover {
+		background: $navy;
+		color: white;
 	}
 }

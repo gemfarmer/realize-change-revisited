@@ -31,7 +31,8 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
-      dist: 'dist'
+      dist: 'dist',
+      node_modules: 'node_modules'
     },
     express: {
       options: {
@@ -68,10 +69,6 @@ module.exports = function (grunt) {
           '<%= yeoman.client %>/{app,components}/**/*.css'
         ],
         tasks: ['injector:css']
-      },
-      mochaTest: {
-        files: ['server/**/*.spec.js'],
-        tasks: ['env:test', 'mochaTest']
       },
       jsTest: {
         files: [
@@ -232,7 +229,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/public/{,*/}*.js',
+            '<%= yeoman.dist %>/public/{,*.js/}*.js',
             '<%= yeoman.dist %>/public/{,*/}*.css',
             '<%= yeoman.dist %>/public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/public/assets/fonts/*'
@@ -433,13 +430,6 @@ module.exports = function (grunt) {
       }
     },
 
-    mochaTest: {
-      options: {
-        reporter: 'spec'
-      },
-      src: ['server/**/*.spec.js']
-    },
-
     protractor: {
       options: {
         configFile: 'protractor.conf.js'
@@ -602,8 +592,7 @@ module.exports = function (grunt) {
     if (target === 'server') {
       return grunt.task.run([
         'env:all',
-        'env:test',
-        'mochaTest'
+        'env:test'
       ]);
     }
 
