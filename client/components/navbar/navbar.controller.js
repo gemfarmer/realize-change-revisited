@@ -7,10 +7,8 @@ angular.module('realizeChangeApp')
     $scope.userInfo = UserInfo;
         // console.log('UserInfo', UserInfo)
     $scope.currentUser.profilePicture = $scope.currentUser.facebook ? 'http://graph.facebook/'+$scope.currentUser.facebook.id+'/picture' 
-                                                                    : "";
+                                                                    : '';
     
-    
-
     $scope.menu = [{
       'title': 'Dreams',
       'link': '/dreams',
@@ -30,7 +28,6 @@ angular.module('realizeChangeApp')
       'iconName':'book'
     }];
 
-    console.log(Auth, Auth.isLoggedIn, Auth.isAdmin)
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
@@ -44,13 +41,15 @@ angular.module('realizeChangeApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
     $rootScope.isCollapsed = true;
+
     $scope.openMenu = function(){
       if (!$rootScope.isCollapsed){
         $location.path('/');
       }
       $rootScope.isCollapsed = !$rootScope.isCollapsed;
-    }
+    };
 
 
   });

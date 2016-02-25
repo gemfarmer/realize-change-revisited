@@ -9,7 +9,7 @@ angular.module('realizeChangeApp')
             'background-size' : 'cover',
             'overflow':'scroll'
         });
-        if (url == 'blank'){
+        if (url === 'blank'){
             element.css({
                 'background-color': 'white'
             });
@@ -31,7 +31,7 @@ angular.module('realizeChangeApp')
             return {
                 'h': w.height()
             };
-        }, function (newValue, oldValue) {
+        }, function (newValue) {
             scope.windowHeight = newValue.h;
             element.css({
                 'height': newValue.h

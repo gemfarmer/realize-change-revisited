@@ -20,7 +20,7 @@
     "morgan": "~1.0.0",
     "passport": "~0.2.0",
     "passport-facebook": "latest",
-    "passport-google-oauth": "latest",
+    "passport-google-oauth2": "latest",
     "passport-local": "~0.1.6",
     "passport-twitter": "latest",
     "serve-favicon": "~2.0.1",

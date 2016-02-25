@@ -3,11 +3,15 @@
 }
 
 .page {
+	margin-left: 40px;
+	// margin-right: $base-padding;
+
 	@media screen and (max-width: $screen-sm-min) {
-		margin-left: $base-padding;
-		margin-right: $base-padding;
+		margin-left: 40px;
+		// margin-right: $base-padding;
 	}
 	padding-top: 75px;
+	background: white;
 }
 .form-control {
 	@media screen and (max-width: $screen-xs-min) {
