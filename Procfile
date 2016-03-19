@@ -1,1 +1,1 @@
-web: grunt && node dist/server/app.js
+web: npm install && bower install && grunt serve
