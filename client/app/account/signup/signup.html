@@ -12,7 +12,7 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
-          <label>Name</label>
+          <label>User Name</label>
 
           <input type="text" name="name" class="form-control" ng-model="user.name"
                  required/>
@@ -68,6 +68,13 @@
           <p class="help-block" ng-show="form.password.$error.mongoose">
             {{ errors.password }}
           </p>
+        </div>
+
+        <div>
+          <label> You are invited to participate in the Think Dream Tank. This project examines how people form and develop their dreams and goals for the future.  This project is completely voluntary and you can stop at anytime. All data will be anonymously shared for educational and research purposes unless otherwise specified. Please visit our About Us page for more information. </label>
+          <!--add check boxes 
+          [ ] Yes I would like to participate and share my information with others.
+          [ ] Please do not share my infomation. I would still like to participate.-->
         </div>
 
         <div>
